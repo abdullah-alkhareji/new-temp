@@ -2,33 +2,44 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/Navbar/Sidebar/Sidebar";
-import Clients from "./pages/Clients/Clients";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Example from "./pages/Example/Example";
 import Home from "./pages/Home/Home";
 
 const AppContainer = styled.div`
   height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 `;
 
 const Main = styled.div`
   height: 100%;
 `;
 
+const Left = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+const Right = styled.div``;
+
 const App = () => {
   return (
     <AppContainer>
       <Navbar />
-      <Main className="container">
+      <Main className="container-fluid">
         <Main className="row">
-          <div className="col-md-3 col-sm-12 bg-primary">
+          <Left className="col-md-2 col-sm-12 p-0">
             <Sidebar />
-          </div>
-          <div className="col-md-9 col-sm-12 bg-dark">
+          </Left>
+          <Right className="col-md-10 col-sm-12 p-0">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/clients" element={<Clients />} />
+              <Route path="/example" element={<Example />} />
             </Routes>
-          </div>
+          </Right>
         </Main>
       </Main>
     </AppContainer>
