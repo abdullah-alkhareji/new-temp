@@ -11,13 +11,14 @@ export const Wrapper = styled.div`
   /* width: 60px; */
   background: #fff;
   /* height: 100%; */
+  max-width: 100%;
   position: fixed;
   bottom: 0;
   height: max-content;
   border-radius: 1rem 1rem 0 0;
   display: flex;
   flex-direction: row;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 0 0 6px 0px rgba(0, 0, 0, 0.3);
 `;
 
