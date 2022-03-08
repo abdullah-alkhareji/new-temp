@@ -7,11 +7,11 @@ body {
   overflow: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-image: linear-gradient(to right bottom, #ccc, #fff);
+  /* background-image: linear-gradient(to left, #f1f1f1, #fff); */
 }
 
 body::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 
 h1,
@@ -30,5 +30,5 @@ a {
 }
 
 a.active {
-  background: #eee;
+  color: #06f;
 }

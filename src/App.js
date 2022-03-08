@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Example from "./pages/Example/Example";
 import Home from "./pages/Home/Home";
@@ -10,38 +9,32 @@ const AppContainer = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  /* overflow: hidden; */
+`;
+
+const Container = styled.div`
+  height: 100%;
+  padding: 0;
 `;
 
 const Main = styled.div`
+  /* padding-left: 70px; */
   height: 100%;
+  padding: 1rem;
 `;
-
-const Left = styled.div`
-  @media (max-width: 768px) {
-    display: none;
-  }
-`;
-const Right = styled.div``;
 
 const App = () => {
   return (
     <AppContainer>
-      <Navbar />
-      <Main className="container-fluid">
-        <Main className="row">
-          <Left className="col-md-2 col-sm-12 p-0">
-            <Sidebar />
-          </Left>
-          <Right className="col-md-10 col-sm-12 p-0">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/example" element={<Example />} />
-            </Routes>
-          </Right>
+      <Container className="container-fluid">
+        <Sidebar />
+        <Main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/example" element={<Example />} />
+          </Routes>
         </Main>
-      </Main>
+      </Container>
     </AppContainer>
   );
 };
